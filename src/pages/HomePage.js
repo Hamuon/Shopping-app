@@ -26,17 +26,19 @@ const HomePage = () => {
 
   return (
     <Layout>
-      <div className="flex flex-wrap justify-around items-center mt-9">
-        {products.map((product) => (
-          <Card
-            addToCartHandler={clickHandler}
-            id={product._id}
-            key={product._id}
-            name={product.name}
-            price={product.price}
-            background={product.image}
-          />
-        ))}
+      <div className="flex justify-around  ">
+        <div className=" container flex flex-wrap justify-start items-center  m-6 ">
+          {products.map((product) => (
+            <Card
+              addToCartHandler={clickHandler}
+              id={product._id}
+              key={product._id}
+              name={product.name}
+              price={product.price}
+              background={product.image}
+            />
+          ))}
+        </div>
       </div>
     </Layout>
   );
