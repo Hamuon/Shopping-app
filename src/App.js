@@ -1,5 +1,5 @@
 import "./App.css";
-import HomePage from "./pages/HomePage"
+import HomePage from "./pages/HomePage";
 import { Route, Routes } from "react-router-dom";
 import CartPage from "./pages/CartPage";
 import CartProvider from "./Providers/CartProdvicer";
@@ -13,22 +13,24 @@ import SingleCategoyPage from "./pages/SingleCategoyPage";
 
 function App() {
   return (
-      <AuthProvider>
-        <CartProvider>
-          <ToastContainer />
-          <Routes>
-            <Route
-              path="/products/category/:categoryName"
-              element={<SingleCategoyPage/>}
-            />
-            <Route path="/cart" element={<CartPage/>} />
-            <Route path="/checkout" element={<CheckoutPage/>} />
-            <Route path="/login" element={<LoginPage/>} />
-            <Route path="/signup" element={<SignupPage/>} />
-            <Route path="/" element={<HomePage/>} />
-          </Routes>
-        </CartProvider>
-      </AuthProvider>
+    <AuthProvider>
+      <CartProvider>
+        <ToastContainer />
+        <Routes>
+          <Route
+            path="/products/category/:categoryName"
+            element={<SingleCategoyPage />}
+          />
+          <Route path="/cart" element={<CartPage />} />
+          <Route path="/checkout" element={<CheckoutPage />} />
+          <Route path="/signup/checkout" element={<CheckoutPage />} />
+          <Route path="/login/checkout" element={<CheckoutPage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/signup" element={<SignupPage />} />
+          <Route path="/" element={<HomePage />} />
+        </Routes>
+      </CartProvider>
+    </AuthProvider>
   );
 }
 

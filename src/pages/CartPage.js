@@ -28,7 +28,7 @@ const CartPage = () => {
           <section className="cartItemList">
             {cart.map((item) => {
               return (
-                <div className="cartItem" key={item.id}>
+                <div className="cartItem" key={item._id}>
                   <div className="itemImg">
                     <img src={item.image} alt={item.name}></img>
                   </div>

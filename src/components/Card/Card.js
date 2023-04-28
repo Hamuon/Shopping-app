@@ -1,15 +1,20 @@
-const Card = ({ background, name, price, key }) => {
+const Card = ({ background, name, price, addToCartHandler, id }) => {
   return (
     <div className="w-80 bg-white shadow rounded m-6">
       <img
         className="h-48 w-full bg-gray-200 flex flex-col justify-between  bg-cover bg-center"
         src={background}
+        alt="Sport Shoe"
       ></img>
       <div className="p-4 flex flex-col items-center">
         <h1 className="text-gray-800 text-center mt-1">{name}</h1>
-        <p className="text-center text-gray-800 mt-1">€{price}</p>
+        <p className="text-center text-gray-800 mt-1">{price} $</p>
 
-        <button className="py-2 px-4 bg-blue-500 text-white rounded hover:bg-blue-600 active:bg-blue-700 disabled:opacity-50 mt-4 w-full flex items-center justify-center">
+        <button
+          id={id}
+          onClick={addToCartHandler}
+          className="py-2 px-4 bg-blue-500 text-white rounded hover:bg-blue-600 active:bg-blue-700 disabled:opacity-50 mt-4 w-full flex items-center justify-center"
+        >
           Add to order
           <svg
             xmlns="http://www.w3.org/2000/svg"

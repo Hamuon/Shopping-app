@@ -5,11 +5,10 @@ import { Link } from "react-router-dom";
 const Checkout = () => {
   const auth = useAuth();
   const { cart, total } = useCart();
-
   if (!cart.length)
     return (
       <main className="container">
-        <Link to="/"> go to shoppung? </Link>
+        <Link to="/"> go to shopping? </Link>
       </main>
     );
 
@@ -19,7 +18,7 @@ const Checkout = () => {
         {auth ? (
           <>
             <section className="cartItemList">
-              <h3>checkout detial</h3>
+              <h3>checkout detail</h3>
               <p>name : {auth.name}</p>
               <p>email : {auth.email}</p>
               <p>phoneNumber: {auth.phoneNumber}</p>
@@ -28,7 +27,7 @@ const Checkout = () => {
               {cart &&
                 cart.map((c) => {
                   return (
-                    <div>
+                    <div key={c._id}>
                       {c.name} * {c.quantity} : {c.quantity * c.offPrice}
                     </div>
                   );

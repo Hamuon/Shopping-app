@@ -48,7 +48,7 @@ const SignupForm = () => {
   const [error, setError] = useState(null);
   useEffect(() => {
     if (auth) navigate(redirect);
-  }, [redirect, auth]);
+  }, [redirect, auth, navigate]);
 
   const onSubmit = async (values) => {
     const { name, email, phoneNumber, password } = values;
